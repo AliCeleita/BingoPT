@@ -15,6 +15,7 @@ import com.progracol.bingo.repo.game.CartonRepo;
 import com.progracol.bingo.repo.game.FiguraRepo;
 import com.progracol.bingo.service.ICartonService;
 
+
 @Service
 public class CartonServiceImp implements ICartonService{
 
@@ -28,7 +29,7 @@ public class CartonServiceImp implements ICartonService{
 	 * Metodo encargado de listar paginado
 	 * @param page indica el número de páginas
 	 * @param size indica el tamaño que tendra cada página
-	 */
+	*/
 	@Override
 	public Page<Carton> listarcartones(int page, int size) {
 		Page<Carton> listaCartones = repo.findAll(PageRequest.of(page, size));
@@ -39,7 +40,7 @@ public class CartonServiceImp implements ICartonService{
 	 * Metodo encargado de evaluar quienes son los ganadores
 	 * @param numeros indica las balotas que se van a comparar
 	 * @param figura indica la figura que se va a evaluar en esta partida 
-	 */
+	*/
 	@Override
 	public List<Carton> evaluate(List<Integer> numeros, char figura) {
 		

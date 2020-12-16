@@ -34,7 +34,7 @@ public class Figura{
 	private Integer group_figure_id;
 	
 	@Column(name = "figure_name", nullable = false, length = 100)
-	@Size(min = 3, max = 100, message = "El nombre de la figura debe tener entre 3 y 100 cáracteres")
+	@Size(min = 1, max = 100, message = "El nombre de la figura debe tener entre 1 y 100 cáracteres")
 	private String figure_name;
 	
 	@Type(type = "list-array")

@@ -18,7 +18,6 @@
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -103,27 +102,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.1.0</version>
-				<configuration>
-					<nonFilteredFileExtensions>
-						<nonFilteredFileExtension>zip</nonFilteredFileExtension>
-						<nonFilteredFileExtension>gz</nonFilteredFileExtension>
-						<nonFilteredFileExtension>gml</nonFilteredFileExtension>
-						<nonFilteredFileExtension>md</nonFilteredFileExtension>
-						<nonFilteredFileExtension>json</nonFilteredFileExtension>
-						<nonFilteredFileExtension>geojson</nonFilteredFileExtension>
-						<nonFilteredFileExtension>txt</nonFilteredFileExtension>
-						<nonFilteredFileExtension>sql</nonFilteredFileExtension>
-						<nonFilteredFileExtension>xlsx</nonFilteredFileExtension>
-						<nonFilteredFileExtension>xls</nonFilteredFileExtension>
-						<nonFilteredFileExtension>pdf</nonFilteredFileExtension>
-					</nonFilteredFileExtensions>
-					<encoding>UTF-8</encoding>
-					<propertiesEncoding>UTF-8</propertiesEncoding>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>

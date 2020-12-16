@@ -2,6 +2,8 @@ package com.progracol.bingo.service.imp;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +22,7 @@ public class FiguraServiceImp implements IFiguraService{
 
 	/**
 	 * Metodo que lista todas las figuras
-	 */
+	*/
 	@Override
 	public List<Figura> get() {
 		return repo.findAll();
@@ -30,7 +32,7 @@ public class FiguraServiceImp implements IFiguraService{
 	/**
 	 * Metodo que actualiza las posiciones de la figura
 	 * @param figura indica el id de la figura existente y las posiciones a actualizar
-	 */
+	*/ 
 	@Override
 	public String update(FiguraDto figura) {
 		if(figura.getFigure_id()==null) {
@@ -40,9 +42,11 @@ public class FiguraServiceImp implements IFiguraService{
 		if(existencia) {
 			Figura fig = repo.findById(figura.getFigure_id()).orElseThrow(() 
 					-> new ModelNotFoundException("Esta figura no existe"));
+			repo.delete(fig);
+			fig.setPositions_winner(null);
 			fig.setPositions_winner(figura.getPositions_winner());
 			repo.save(fig);
-			return "Se ha editado la direccion";
+			return "Se ha editado la figura";
 		}else {
 			throw new ModelNotFoundException("Esta figura no existe");
 		}
